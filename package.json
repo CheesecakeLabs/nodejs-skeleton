@@ -1,0 +1,13 @@
+{
+    "name"                    : "ckl-website",
+    "version"                 : "0.0.1",
+    "description"             : "Cheesecake Labs Main Website",
+    "main"                    : "app.js",
+    "author"                  : "Alexandre Cordeiro",
+    "dependencies"            : {
+        "express"             : "latest",
+        "express-generator"   : "latest",
+        "sequelize"           : "latest",
+        "sequelize-cli"       : "latest"
+    }
+}

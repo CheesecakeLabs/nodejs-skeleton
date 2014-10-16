@@ -1,5 +1,464 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  head
+    title Cheesecake Labs
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui')
+    meta(charset='UTF-8')
+    meta(name='keywords', content='Keyword1, Keyword2, Keyword3')
+    meta(name='description', content='A short and accurate summary of the content of this webpage')
+    link(href='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic', rel='stylesheet', type='text/css')
+    link(href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
+    link(href='stylesheets/index.css', rel='stylesheet', type='text/css')
+    link(href='stylesheets/colorbox.css', rel='stylesheet', type='text/css')
+  body
+    // Preloader
+    .preloader
+      i.fa.fa-spinner.fa-spin
+    .container.invisible
+      header.row
+        // Navigation Bar
+        nav#main-nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+          // Brand and toggle get grouped for better mobile display
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='#')
+              img(src='images/logo.png', alt='')
+          // Collect the nav links, forms, and other content for toggling
+          .collapse.navbar-collapse.navbar-ex1-collapse
+            ul.nav.navbar-nav
+              li
+                a.scroll(href='#slider') Home
+              li
+                a.scroll(href='#services') Services
+              li
+                a.scroll(href='#portfolio') Portfolio
+              li
+                a.scroll(href='#testimonials') Testimonials
+              li
+                a.scroll(href='#team') Team
+              li
+                a.scroll(href='#contact') Contact
+          // /.navbar-collapse
+        // End of Navigation Bar
+      // Slider
+      a.scroll.scroll-down-arrow(href='#services')
+        i.fa.fa-arrow-down
+      section#slider.row
+        #wanchai-carousel.carousel.slide
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#wanchai-carousel', data-slide-to='0')
+            li(data-target='#wanchai-carousel', data-slide-to='1')
+          // Wrapper for slides
+          .carousel-inner
+            .item.active
+              img(src='images/golden_gate_bridge.jpg', alt='...')
+              .carousel-caption
+                h1 We connect the world.
+                p
+                  | At Cheesecake Labs, we connect great ideas with efficient and quality-assured app development.
+            .item
+              img(src='https://s3-us-west-2.amazonaws.com/ckl-site-static/ponte_hercilio_luz.jpg', alt='...')
+              .carousel-caption
+                h1 We connect the world.
+                p
+                  | Our clients are all around the globe. No matter where you are, if you have a good idea, we&apos;ll make it become a solid product.
+          // Controls
+          a.left.carousel-control(href='#wanchai-carousel', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left
+          a.right.carousel-control(href='#wanchai-carousel', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right
+        // End of #wanchai-carousel
+      // End of Slider
+      // Services
+      section#services.row.color(data-scroll-factor='0.7')
+        .col-md-10.col-md-offset-1
+          .icon
+            i.fa.fa-briefcase
+          h1 What we do
+          .section-content
+            p
+              | Our team aims at creating a new way to collaboratively develop amazing products, with full-stack web and mobile solutions, along with a culture of clear communication and fast iterations. From product development to software engineering, we work with startups from all around the globe.
+            .row
+              .col-md-4.service
+                .icon.service-icon.animate-zoom
+                  i.fa.fa-apple
+                h3 iOS Apps
+                // <p>Lorem ipsum dolor sit eius amet, <br>consectetur adipisicing elit pariatur, quos, <br>tempore minima eveniet id <br>facilis eligendi sed dolor!<br></p>
+              .col-md-4.service
+                .icon.service-icon.animate-zoom
+                  i.fa.fa-android
+                h3 Android Apps
+                // <p>Lorem ipsum dolor sit eius amet, <br>consectetur adipisicing elit pariatur, quos, <br>tempore minima eveniet id <br>facilis eligendi sed dolor!<br></p>
+              .col-md-4.service
+                .icon.service-icon.animate-zoom
+                  i.fa.fa-code
+                h3 Back-End and Web Development
+                // <p>Lorem ipsum dolor sit eius amet, <br>consectetur adipisicing elit pariatur, quos, <br>tempore minima eveniet id <br>facilis eligendi sed dolor!<br></p>
+        // End of .col-md-10
+      // End of Services
+      // Portfolio
+      section#portfolio.row(data-scroll-factor='0.4')
+        .col-md-10.col-md-offset-1
+          .icon
+            i.fa.fa-star-o
+          h1 Projects and Partners
+          .section-content
+            // <p>Here are some of our projects, as.</p>
+            ul.categories.list-inline.text-center
+              li
+                a(href='#', data-cat='all') All
+              li
+                a(href='#', data-cat='ios') iOS
+              li
+                a(href='#', data-cat='android') Android
+              li
+                a(href='#', data-cat='web') Web
+            ul.thumbnails.clearfix
+              li.thumbnail.animate-zoom.photography
+                .image(data-sm-src='http://placehold.it/300x200', data-lg-src='http://placehold.it/500x333', data-more-href='http://www.envato.com/')
+                .title Lorem ipsum dolor sit amet
+                .desc
+                  dl.clearfix
+                    dt Type: 
+                    dd Landscape Photography
+                    dt Year: 
+                    dd 2013
+                    dt Award: 
+                    dd Best Picture Award 2013
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.
+              li.thumbnail.animate-zoom.illustration
+                .image(data-sm-src='http://placehold.it/300x200', data-lg-src='http://placehold.it/500x333,http://placehold.it/500x333', data-more-href='http://www.envato.com/')
+                .title Consectetur Adipiscing Elit
+                .desc
+                  dl.clearfix
+                    dt Type: 
+                    dd Illustration
+                    dt Year: 
+                    dd 2013
+                    dt Award: 
+                    dd Best Illustration Award 2013
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.
+                  p
+                    | Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.
+              li.thumbnail.animate-zoom.motion-graphics
+                .image(data-sm-src='http://placehold.it/300x200', data-video-src='http://www.youtube.com/embed/EYuTt9JdcvY', data-more-href='http://www.envato.com/')
+                .title Sed Blandit Risus a Dolor Luctus
+                .desc
+                  dl.clearfix
+                    dt Type: 
+                    dd Motion Graphics
+                    dt Year: 
+                    dd 2013
+                    dt Award: 
+                    dd Best Motion Grahpics Award 2013
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, possimus, odit perferendis quisquam neque fuga labore veritatis praesentium explicabo molestiae minus accusantium fugit eum recusandae facere alias deserunt quasi autem!
+              li.thumbnail.animate-zoom.web-design
+                .image(data-sm-src='http://placehold.it/300x200', data-lg-src='http://placehold.it/500x333', data-more-href='http://www.envato.com/')
+                .title Facere Alias Deserunt
+                .desc
+                  dl.clearfix
+                    dt Type: 
+                    dd Web Design
+                    dt Year: 
+                    dd 2013
+                    dt Award: 
+                    dd Best Web Design Award 2013
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan.
+              li.thumbnail.animate-zoom.interactive-design
+                .image(data-sm-src='http://placehold.it/300x200', data-lg-src='http://placehold.it/500x333', data-more-href='http://www.envato.com/')
+                .title Lorem ipsum dolor sit amet
+                .desc
+                  dl.clearfix
+                    dt Type: 
+                    dd Interactive Design
+                    dt Year: 
+                    dd 2013
+                    dt Award: 
+                    dd Best Interactive Design Award 2013
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.
+              li.thumbnail.animate-zoom.photography
+                .image(data-sm-src='http://placehold.it/300x200', data-lg-src='http://placehold.it/500x333', data-more-href='http://www.envato.com/')
+                .title Lorem ipsum dolor sit amet
+                .desc
+                  dl.clearfix
+                    dt Type: 
+                    dd Landscape Photography
+                    dt Year: 
+                    dd 2013
+                    dt Award: 
+                    dd Best Picture Award 2013
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.
+              li.thumbnail.animate-zoom.illustration
+                .image(data-sm-src='http://placehold.it/300x200', data-lg-src='http://placehold.it/500x333')
+                .title Lorem ipsum dolor sit amet
+                .desc
+                  dl.clearfix
+                    dt Type: 
+                    dd Illustration
+                    dt Year: 
+                    dd 2013
+                    dt Award: 
+                    dd Best Illustration Award 2013
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.
+              li.thumbnail.animate-zoom.web-design
+                .image(data-sm-src='http://placehold.it/300x200', data-lg-src='http://placehold.it/500x333,http://placehold.it/500x333')
+                .title Lorem ipsum dolor sit amet
+                .desc
+                  dl.clearfix
+                    dt Type: 
+                    dd Web Design
+                    dt Year: 
+                    dd 2013
+                    dt Award: 
+                    dd Best Web Design Award 2013
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.
+              //
+                <li class="thumbnail animate-zoom motion-graphics">
+                <div class="image" data-sm-src="http://placehold.it/300x200" data-video-src="http://player.vimeo.com/video/7449107"></div>
+                <div class="title">Lorem ipsum dolor sit amet</div>
+                <div class="desc">
+                <dl class="clearfix">
+                <dt>Type: </dt>
+                <dd>Motion Graphics</dd>
+                <dt>Year: </dt>
+                <dd>2013</dd>
+                <dt>Award: </dt>
+                <dd>Best Motion Grahpics Award 2013</dd>
+                </dl>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo faucibus nisi, at commodo eros condimentum vel. Sed blandit risus a dolor luctus in tempor libero accumsan. Nullam consectetur egestas mauris in ullamcorper.</p>
+                </div>
+                </li>
+            .details
+              .arrow
+              .close-btn
+                i.fa.fa-times-circle
+              .row
+                .left.image.col-sm-6
+                .right.col-sm-6
+                  h4.title
+                  .desc
+                  .more
+                  .nav
+                    a.prev(href='#')
+                      i.fa.fa-angle-left
+                    a.next(href='#')
+                      i.fa.fa-angle-right
+        // End of .col-md-10
+      // End of Portfolio
+      // Testimonials
+      section#testimonials.row.color
+        .col-md-10.col-md-offset-1
+          .icon
+            i.fa.fa-comment-o
+          h1 Testimonials
+          .section-content
+            ul.quotes
+              li
+                blockquote
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a bibendum sapien. Nunc mattis vulputate orci at tempus. Sed in quam ante, a tempus est. Nullam eu enim neque.
+                p.company AudioJungle
+              li
+                blockquote
+                  | Nullam nec volutpat tortor. Ut non neque at metus ultricies vestibulum. Ut sit amet nulla sed tellus sollicitudin ornare. In a diam erat. Pellentesque diam sapien, varius ac luctus ut, laoreet ultrices libero.
+                p.company ThemeForest
+              li
+                blockquote
+                  | Aliquam in ipsum urna. Sed non dapibus nisl. Praesent euismod, massa pulvinar adipiscing elementum, arcu augue laoreet nisl, vel vestibulum sapien eros at nibh. Vivamus tempor accumsan nibh, id aliquam sem condimentum a.
+                p.company PhotoDune
+              li
+                blockquote
+                  | Sed at massa justo, quis viverra justo. Duis at lectus nec lacus malesuada dignissim. Phasellus venenatis, neque non congue blandit, purus est varius dui, id lacinia nisl lacus a magna. Nam ante turpis, tempor eu imperdiet at, rutrum id metus. Donec vel felis tortor. Aenean tristique tempor leo quis ullamcorper.
+                p.company GraphicRiver
+              li
+                blockquote
+                  | Nulla in mattis velit. Curabitur in dui ut elit viverra ullamcorper at quis tellus. Vestibulum vel enim consectetur dolor congue dapibus. Nullam lorem lacus, fermentum sed auctor sed, laoreet et odio.
+                p.company VideoHive
+        // End of .col-md-10
+      // End of Testimonials
+      // Upper Separator
+      section.row.separator.parallax(data-background-image='http://placehold.it/1200x800', data-parallax-factor='.8')
+        .col-md-10.col-md-offset-1
+          p
+            | We always think from our clients&apos; perspectives.
+            br
+            | That&apos;s why they love us and keep coming back.
+      // End of Upper Separator
+      // Team
+      section#team.row(data-scroll-factor='0.6')
+        .col-md-10.col-md-offset-1
+          .icon
+            i.fa.fa-user
+          h1 Meet Our Team
+          .section-content
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              br
+              | Proin sit amet mi leo, quis tincidunt turpis. Praesent aliquet odio quis neque sollicitudin mollis.
+              br
+              | Etiam purus, faucibus at rhoncus ut, tempus in tortor. Morbi tincidunt eleifend facilisis.
+            .row
+              .col-sm-3
+                .member
+                  .photo.animate-zoom(data-member-photo='http://placehold.it/250x250')
+                  .desc
+                    h4.name John Doe
+                    p.title Founder &amp; CEO
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing quos, tempore minima eveniet id facilis eligendi sed dolor!
+                    ul.social.list-inline
+                      li
+                        a(href='#')
+                          i.fa.fa-facebook
+                      li
+                        a(href='#')
+                          i.fa.fa-twitter
+                      li
+                        a(href='#')
+                          i.fa.fa-linkedin
+                      li
+                        a(href='#')
+                          i.fa.fa-google-plus
+              .col-sm-3
+                .member
+                  .photo.animate-zoom(data-member-photo='http://placehold.it/250x250')
+                  .desc
+                    h4.name Jane Roe
+                    p.title Designer
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing quos, tempore minima eveniet id facilis eligendi sed dolor!
+                    ul.social.list-inline
+                      li
+                        a(href='#')
+                          i.fa.fa-facebook
+                      li
+                        a(href='#')
+                          i.fa.fa-twitter
+                      li
+                        a(href='#')
+                          i.fa.fa-linkedin
+                      li
+                        a(href='#')
+                          i.fa.fa-google-plus
+              .col-sm-3
+                .member
+                  .photo.animate-zoom(data-member-photo='http://placehold.it/250x250')
+                  .desc
+                    h4.name Sammy Soe
+                    p.title Front-End Web Developer
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing quos, tempore minima eveniet id facilis eligendi sed dolor!
+                    ul.social.list-inline
+                      li
+                        a(href='#')
+                          i.fa.fa-facebook
+                      li
+                        a(href='#')
+                          i.fa.fa-twitter
+                      li
+                        a(href='#')
+                          i.fa.fa-linkedin
+                      li
+                        a(href='#')
+                          i.fa.fa-google-plus
+              .col-sm-3
+                .member
+                  .photo.animate-zoom(data-member-photo='http://placehold.it/250x250')
+                  .desc
+                    h4.name Jackie Joe
+                    p.title Back-End Web Developer
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing quos, tempore minima eveniet id facilis eligendi sed dolor!
+                    ul.social.list-inline
+                      li
+                        a(href='#')
+                          i.fa.fa-facebook
+                      li
+                        a(href='#')
+                          i.fa.fa-twitter
+                      li
+                        a(href='#')
+                          i.fa.fa-linkedin
+                      li
+                        a(href='#')
+                          i.fa.fa-google-plus
+        // End of .col-md-10
+      // End of Team
+      // Contact
+      section#contact.row.color(data-scroll-factor='0.7')
+        #map-canvas
+        .col-md-10.col-md-offset-1
+          .icon
+            i.fa.fa-info
+          h1 Contact
+          .section-content
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet mi leo, quis tincidunt turpis. Praesent aliquet odio quis neque sollicitudin mollis. Etiam purus quam, faucibus at rhoncus ut, tempus in tortor. Morbi tincidunt eleifend facilisis.
+            ul.contact-info.row
+              li.col-sm-4
+                i.fa.fa-map-marker.animate-zoom
+                br
+                | 999 Hennessy Road, Wan Chai, Hong Kong
+              li.col-sm-4
+                i.fa.fa-phone.animate-zoom
+                br
+                | (246) 2222-9999
+              li.col-sm-4
+                i.fa.fa-envelope.animate-zoom
+                br
+                a(href='mailto:info@simon-li.com') info@simon-li.com
+            form#contact-form.form-horizontal(role='form', method='post', action='php/contact.php', name='contact-form')
+              .form-group
+                input#contact-form-name.form-control(type='text', name='contact-form-name', placeholder='Name', required='')
+              .form-group
+                input#contact-form-email.form-control(type='email', name='contact-form-email', placeholder='Email', required='')
+              .form-group
+                textarea#contact-form-message.form-control(name='contact-form-message', rows='3', placeholder='Message', required='')
+              .form-group
+                button#contact-form-submit-btn.btn.btn-default(type='submit') Send
+            #message
+        // End of .col-md-10
+      // End of Contact
+      // Footer
+      footer.row
+        .col-md-10.col-md-offset-1
+          .row.text-center
+            ul.social-icons.list-inline
+              li
+                a(href='#')
+                  i.fa.fa-facebook
+              li
+                a(href='#')
+                  i.fa.fa-twitter
+              li
+                a(href='#')
+                  i.fa.fa-dribbble
+              li
+                a(href='#')
+                  i.fa.fa-linkedin
+              li
+                a(href='#')
+                  i.fa.fa-google-plus
+              li
+                a(href='#')
+                  i.fa.fa-weibo
+            p Copyright &copy; 2013. All Rights Reserved.
+        // End of .col-md-10
+      // End of Footer
+    // End of Container
+    script(data-main='javascripts/config', src='javascripts/require.js')

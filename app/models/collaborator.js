@@ -1,10 +1,23 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose'),
 
-var collaboratorSchema = new Schema({
-  name: String,
-  photo_url: String,
-  description: String
+var schema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  photo_url: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  description: {
+    type: String,
+    required: true,
+    unique: false,
+  }
 });
 
-var Collaborator = mongoose.model('Collaborator', collaboratorSchema);
+var Model = mongoose.model('Collaborator', schema);
+
+module.exports = Model;
